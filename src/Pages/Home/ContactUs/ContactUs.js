@@ -1,5 +1,5 @@
 import React from 'react';
-import bg from '../../../images/img_1S_12-copy.jpg';
+import bg from '../../../images/motorbike-banner-designbyayesha_4x.webp';
 
 
 

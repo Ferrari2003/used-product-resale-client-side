@@ -8,10 +8,28 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const SignIn = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const imageHostKey = process.env.REACT_APP_imgbb_key;
+ 
+
     const { createUser,googleSign } = useContext(AuthContext);
 
     const handleSignUp = (data )=> {
         console.log(data)
+        const image = data.image[0];
+        const formData = new FormData();
+        formData.append('image',image);
+        const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imageHostKey}`
+        fetch(url, {
+            method:'POST', 
+            body:formData
+        }) 
+        .then(res => res.json())
+        .then(imgData => {
+            if(imgData.success){
+                console.log(imgData.data.url)
+            }
+        })
+        
         createUser(data.email, data.password)
         .then(result => {
             const user = result.user;
@@ -67,6 +85,17 @@ const SignIn = () => {
 
                         })} className="input input-bordered w-full max-w-xs" />
                         {errors.password?.type === 'required' && <p className='text-red-600'>{errors.password.message}</p>}
+                    </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Password</span>
+                        </label>
+                        <input type="file" {...register("image", {
+                            required: 'Photo is required',
+                          
+
+                        })} className="input input-bordered w-full max-w-xs" />
+                        {errors.img?.type === 'required' && <p className='text-red-600'>{errors.img.message}</p>}
                     </div>
 
                     <input className='btn btn-active mt-8 btn-primary w-full' type="submit" value={'Create an account'} />

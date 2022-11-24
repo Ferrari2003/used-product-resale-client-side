@@ -10,11 +10,12 @@ const AuthProvider = ({children}) => {
         return createUserWithEmailAndPassword(auth, email,password);
     };
 
+    
     const provider = new GoogleAuthProvider();
-
     const googleSign = () => {
         return signInWithPopup(auth, provider)
     }
+
 
     const signUp = (email,password) => {
         return signInWithEmailAndPassword(auth, email,password)
@@ -27,6 +28,8 @@ const AuthProvider = ({children}) => {
         signUp,
         googleSign  
     };
+
+    
 
 
     return (

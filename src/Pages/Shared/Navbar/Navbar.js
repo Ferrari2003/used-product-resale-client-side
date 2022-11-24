@@ -1,15 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../images/logos.png'
 
 const Navbar = () => {
 
     const menuItem = <>
-        <li><Link className='btn btn-ghost font-bold' to={'/'}>Home</Link></li>
-        <li><Link className='btn btn-ghost font-bold' to={'/'}>Appointment</Link></li>
-        <li><Link className='btn btn-ghost font-bold' to={'/'}>About</Link></li>
-        <li><Link className='btn btn-ghost font-bold' to={'/blog'}>Blog</Link></li>
-        <li><Link className='btn btn-ghost font-bold' to={'/login'}>Login</Link></li>
+        <li><NavLink className='btn btn-ghost font-bold' to={'/'}>Home</NavLink></li>
+        <li><NavLink className='btn btn-ghost font-bold' to={'/appointment'}>Appointment</NavLink></li>
+        <li><NavLink className='btn btn-ghost font-bold' to={'/About'}>About</NavLink></li>
+        <li><NavLink className='btn btn-ghost font-bold' to={'/blog'}>Blog</NavLink></li>
+        <li><NavLink className='btn btn-ghost font-bold' to={'/login'}>Login</NavLink></li>
         
     </>
 
@@ -25,7 +25,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link to={'/'} className="w-24">
-                    <img src={logo} alt="" />
+                    <img className='ml-12' src={logo} alt="" />
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">

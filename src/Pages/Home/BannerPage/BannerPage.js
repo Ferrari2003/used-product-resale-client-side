@@ -1,9 +1,10 @@
 import React from 'react';
-import banner from '../../../images/1a631033-4a0e-4d70-b549-e283077e5c0e.jpg'
+import banner from '../../../images/bike-motorcycle-sale-promotion-banner-social-media-post-design_657888-175.webp'
 
 const BannerPage = () => {
     return (
         <div className='mt-12'>
+            <h1 className='text-4xl text-center mb-6 font-bold'>Banner</h1>
             <img className='w-full  rounded-xl' src={banner} alt="" />
             
         </div>
