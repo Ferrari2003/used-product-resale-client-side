@@ -4,12 +4,12 @@ import banner from '../../../images/yamaha-motor-unveils-155-cc-bike-mt-15-at-rs
 
 const Banner = () => {
     return (
-        <div className="hero bg-slate-100">
+        <div className="hero bg-slate-50">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <img src={banner} className="rounded-lg  w-1/2 shadow-2xl" alt='' />
                 <div>
-                    <h1 className="text-5xl font-bold">Box Office News!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <h1 className="text-5xl font-semibold">Welcome To..<strong className='text-red-500'>Bike Resale Market</strong></h1>
+                    <p className="py-6">Safe Trading Motorbike on Leading B2B Platform. High Quality Motorbike with Competitive Price. China’s B2B Impact Award. Leading B2B Portal. Quality China Products. SGS Audited Suppliers. Highlights: New User Guide Available, Multiple Quotes Available, App Available..</p>
                     <Link to={'/'} className="btn btn-primary bg-gradient-to-r from-purple-500 to-pink-500">Buy Now</Link>
                 </div>
             </div>

@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../../images/Logo-Yamaha.png'
 
 const Navbar = () => {
 
     const menuItem = <>
-        <li><Link className='btn btn-ghost' to={'/'}>Home</Link></li>
-        <li><Link className='btn btn-ghost' to={'/'}>Home</Link></li>
-        <li><Link className='btn btn-ghost' to={'/'}>Home</Link></li>
-        <li><Link className='btn btn-ghost' to={'/'}>Home</Link></li>
+        <li><Link className='btn btn-ghost font-bold' to={'/'}>Home</Link></li>
+        <li><Link className='btn btn-ghost font-bold' to={'/'}>Appointment</Link></li>
+        <li><Link className='btn btn-ghost font-bold' to={'/'}>About</Link></li>
+        <li><Link className='btn btn-ghost font-bold' to={'/'}>Blog</Link></li>
+        <li><Link className='btn btn-ghost font-bold' to={'/login'}>Login</Link></li>
         
     </>
 
@@ -22,16 +24,15 @@ const Navbar = () => {
                         {menuItem}
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+                <Link className="w-20">
+                    <img src={logo} alt="" />
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                    {menuItem}
                 </ul>
-            </div>
-            <div className="navbar-end">
-                <Link className="btn">Get started</Link>
-            </div>
+            </div>           
         </div>
     );
 };
