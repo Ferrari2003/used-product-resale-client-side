@@ -5,7 +5,7 @@ import {FaBuffer } from "react-icons/fa";
 
 const Categories = () => {
     return (
-        <section className='bg-red-200'>
+        <section className='bg-red-200 mt-12 rounded-xl'>
             <div>
                 <div className='flex justify-center items-center text-4xl font-bold py-2'>
                 <FaBuffer className='mr-3'></FaBuffer>

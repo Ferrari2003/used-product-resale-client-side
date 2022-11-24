@@ -4,7 +4,7 @@ import banner from '../../../images/20210302050600_Best_selling_bikes_in_January
 
 const Banner = () => {
     return (
-        <div className="hero bg-slate-50">
+        <div className="hero bg-slate-50 rounded-xl">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <img src={banner} className="rounded-lg  w-1/2 shadow-2xl" alt='' />
                 <div>
