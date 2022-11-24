@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import banner from '../../../images/yamaha-motor-unveils-155-cc-bike-mt-15-at-rs-1-36-lakh.webp'
+import banner from '../../../images/20210302050600_Best_selling_bikes_in_January_2021.jpg'
 
 const Banner = () => {
     return (

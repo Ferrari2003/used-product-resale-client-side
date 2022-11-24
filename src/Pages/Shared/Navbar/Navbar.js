@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../images/Logo-Yamaha.png'
+import logo from '../../../images/logos.png'
 
 const Navbar = () => {
 
@@ -24,7 +24,7 @@ const Navbar = () => {
                         {menuItem}
                     </ul>
                 </div>
-                <Link className="w-20">
+                <Link to={'/'} className="w-24">
                     <img src={logo} alt="" />
                 </Link>
             </div>
