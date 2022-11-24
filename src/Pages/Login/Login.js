@@ -1,14 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import { FaGoogle} from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+
 
 const Login = () => {
+    const { register, formState: { errors }, handleSubmit } = useForm();
+    const {signUp,googleSign  } = useContext(AuthContext);
 
-    const { register,formState: { errors },  handleSubmit } = useForm();
+
 
     const handleLogin = data => {
-    console.log(data)
+        console.log(data)
+        signUp(data.email, data.password)
+        .then(result => {
+            const user = result.user;
+            console.log(user)
+        })
+        .catch(error => console.log(error))
+    }
+
+    const handleGoogleLogin = () => {
+        googleSign()
+        .then(result => {
+            const user = result.user
+            console.log(user)
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
 
     return (
@@ -21,10 +42,10 @@ const Login = () => {
                             <span className="label-text">Email</span>
                         </label>
                         <input type="email" {...register("email", {
-                            required:'Email is required'
-                        })} 
-                        className="input input-bordered w-full max-w-xs" />
-                         {errors.email?.type === 'required' && <p className='text-red-600'>Email is required</p>}
+                            required: 'Email is required'
+                        })}
+                            className="input input-bordered w-full max-w-xs" />
+                        {errors.email?.type === 'required' && <p className='text-red-600'>Email is required</p>}
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
@@ -32,10 +53,10 @@ const Login = () => {
                         </label>
                         <input type="password" {...register("password", {
                             required: 'Password is required',
-                            minLength: {value:6, message:'password must be 6 characters'}
-                        
+                         
+
                         })} className="input input-bordered w-full max-w-xs" />
-                            {errors.password?.type === 'required' && <p className='text-red-600'>Password is required</p>}
+                        {errors.password?.type === 'required' && <p className='text-red-600'>Password is required</p>}
                         <label className="label">
                             <Link className="label-text">Forget Password</Link>
                         </label>
@@ -44,7 +65,7 @@ const Login = () => {
                     <p className='text-center'>Nwe to account? <Link className=' text-accent font-semibold' to={'/signIn'}>Create new account</Link></p>
                 </form>
                 <div className="divider">OR</div>
-                <button className='btn btn-outline w-full'><FaGoogle className='mr-3 text-3xl text-red-500'></FaGoogle>CONTINUE WITH GOOGLE</button>
+                <button onClick={handleGoogleLogin} className='btn btn-outline w-full'><FaGoogle className='mr-3 text-3xl text-red-500'></FaGoogle>CONTINUE WITH GOOGLE</button>
             </div>
         </div>
     );
