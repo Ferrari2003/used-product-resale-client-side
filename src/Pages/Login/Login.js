@@ -32,8 +32,8 @@ const Login = () => {
                         </label>
                         <input type="password" {...register("password", {
                             required: 'Password is required',
-
-                            // minLength: {value:6, message:'password must be 6 characters'}
+                            minLength: {value:6, message:'password must be 6 characters'}
+                        
                         })} className="input input-bordered w-full max-w-xs" />
                             {errors.password?.type === 'required' && <p className='text-red-600'>Password is required</p>}
                         <label className="label">
