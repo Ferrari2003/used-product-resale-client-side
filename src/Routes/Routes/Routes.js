@@ -6,6 +6,7 @@ import Login from "../../Pages/Login/Login";
 import MainHome from "../../Pages/MainHome/MainHome";
 import About from "../../Pages/Shared/About/About";
 import SignIn from "../../Pages/SignIn/SignIn";
+import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -42,6 +43,6 @@ export const router = createBrowserRouter([
           },
           {
             path:'/dashboard',
-            element:<Dashboard></Dashboard>
+            element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>
           }
     ])
