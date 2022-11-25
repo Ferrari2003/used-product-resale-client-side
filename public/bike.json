@@ -1,0 +1,29 @@
+[
+    {
+      "_id": "63804e4ff4748a872bb204a4",
+      "images": "https://i.ibb.co/204bTFn/kawasaki.jpg",
+      "name": "kawasaki",
+      "location": "manikganj_1800",
+      "orginal_price": 600000,
+      "resale_price": "$300000",
+      "year": 2016
+    },
+    {
+      "_id": "63804e4f1d9245709eb0e593",
+      "images": "https://i.ibb.co/v4RpJdn/fz.webp",
+      "name": "Yamaha",
+      "location": "manikganj_1800",
+      "orginal_price": "$250000",
+      "resale_price": "$190000",
+      "year": 2022
+    },
+    {
+      "_id": "63804e4f8fafcc7c28ab85cb",
+      "images": "https://i.ibb.co/kSRkJKw/ofvokv5s-2020-suzuki-gixxer-155.webp",
+      "name": "Suzuki",
+      "location": "manikganj_1800",
+      "orginal_price": 175000,
+      "resale_price": "$140000",
+      "year": 2019
+    }
+  ]

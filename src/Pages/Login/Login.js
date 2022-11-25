@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { FaGoogle } from "react-icons/fa";
@@ -8,17 +8,22 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const {signUp,googleSign  } = useContext(AuthContext);
+    const [loginError, setLoginError] = useState('');
 
 
 
     const handleLogin = data => {
-        console.log(data)
+        console.log(data);
+        setLoginError('');
         signUp(data.email, data.password)
         .then(result => {
             const user = result.user;
             console.log(user)
         })
-        .catch(error => console.log(error))
+        .catch(error =>{
+            console.log(error.message);
+            setLoginError(error.message)
+        }) 
     }
 
     const handleGoogleLogin = () => {
@@ -63,6 +68,9 @@ const Login = () => {
                     </div>
                     <input className='btn btn-active btn-secondary w-full' type="submit" value={'Login'} />
                     <p className='text-center'>Nwe to account? <Link className=' text-accent font-semibold' to={'/signIn'}>Create new account</Link></p>
+                 <div>
+                    {loginError && <p className='text-red-500'>{loginError}</p>}
+                 </div>
                 </form>
                 <div className="divider">OR</div>
                 <button onClick={handleGoogleLogin} className='btn btn-outline w-full'><FaGoogle className='mr-3 text-3xl text-red-500'></FaGoogle>CONTINUE WITH GOOGLE</button>

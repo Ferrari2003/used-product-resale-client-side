@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {FaBuffer } from "react-icons/fa";
+import {FaBuffer,} from "react-icons/fa";
 
 
 const Categories = () => {
@@ -13,10 +13,11 @@ const Categories = () => {
                 
                 </div>
                 <ul className='p-10'>
-                    <li><Link className='btn btn-outline btn-secondary mt-4 '>Sidebar Item 1</Link></li>
-                    <li><Link className='btn btn-outline btn-secondary mt-4 '>Sidebar Item 2</Link></li>
-                    <li><Link className='btn btn-outline btn-secondary mt-4 '>Sidebar Item 1</Link></li>
-                    <li><Link className='btn btn-outline btn-secondary mt-4 '>Sidebar Item 2</Link></li>
+                    <li><Link className='btn btn-outline btn-secondary mt-4 '>Kawasaki</Link></li>
+                    <li><Link className='btn btn-outline btn-secondary mt-4 '>Yamaha</Link></li>
+                    <li><Link className='btn btn-outline btn-secondary mt-4 '>Suzuki</Link></li>
+                    <li><Link className='btn btn-outline btn-secondary mt-4 '>All</Link></li>
+                    
                 </ul>
             </div>
         </section>

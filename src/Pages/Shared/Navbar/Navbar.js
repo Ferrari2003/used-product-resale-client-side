@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import logo from '../../../images/logos.png'
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
 
     const menuItem = <>
-        <li><NavLink className='btn btn-ghost font-bold' to={'/'}>Home</NavLink></li>
-        <li><NavLink className='btn btn-ghost font-bold' to={'/appointment'}>Appointment</NavLink></li>
-        <li><NavLink className='btn btn-ghost font-bold' to={'/About'}>About</NavLink></li>
-        <li><NavLink className='btn btn-ghost font-bold' to={'/blog'}>Blog</NavLink></li>
-        <li><NavLink className='btn btn-ghost font-bold' to={'/login'}>Login</NavLink></li>
-        
+        <li><NavLink className='btn btn-ghost font-bold rounded-xl' to={'/'}>Home</NavLink></li>
+        <li><NavLink className='btn btn-ghost font-bold rounded-xl' to={'/About'}>About</NavLink></li>
+        <li><NavLink className='btn btn-ghost font-bold rounded-xl' to={'/blog'}>Blog</NavLink></li>
+
+        {user?.uid ?
+            <>
+                <li><NavLink className='btn btn-ghost font-bold rounded-xl' to={'/dashboard'}>Dashboard</NavLink></li>
+                <li><NavLink onClick={handleLogOut} className='btn btn-ghost font-bold rounded-xl' to={'/login'}>Sign out </NavLink></li>
+            </>
+            : <li><NavLink className='btn btn-ghost font-bold rounded-xl' to={'/login'}>Login</NavLink></li>
+        }
+
     </>
 
     return (
@@ -30,9 +44,9 @@ const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
-                   {menuItem}
+                    {menuItem}
                 </ul>
-            </div>           
+            </div>
         </div>
     );
 };
