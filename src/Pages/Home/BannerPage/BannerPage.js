@@ -13,3 +13,5 @@ const BannerPage = () => {
 };
 
 export default BannerPage;
+
+
