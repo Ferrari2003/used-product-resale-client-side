@@ -28,7 +28,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -42,11 +42,18 @@ const Navbar = () => {
                     <img className='ml-12' src={logo} alt="" />
                 </Link>
             </div>
-            <div className="navbar-center hidden lg:flex">
+          <div>
+          <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {menuItem}
                 </ul>
             </div>
+            <div className='avatar online ml-[300px]'>
+                <div className="w-16 rounded-full">
+                    <img src="https://placeimg.com/192/192/people" alt='' />
+                </div>
+            </div>
+          </div>
         </div>
     );
 };

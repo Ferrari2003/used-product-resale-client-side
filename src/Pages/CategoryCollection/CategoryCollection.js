@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import BookingModal from './BookingModal/BookingModal';
 import CategoryCollectionCard from './CategoryCollectionCard/CategoryCollectionCard';
 
 const CategoryCollection = () => {
  
     const CardData = useLoaderData();
     const {products} = CardData;
+    const [data, setData] = useState(null)
     
 
     return (
@@ -14,7 +16,15 @@ const CategoryCollection = () => {
                 products?.map(items => <CategoryCollectionCard
                     key={items._id}
                     items={items}
+                    setData={setData}
                 ></CategoryCollectionCard>)
+            }
+            {
+            data && 
+            <BookingModal
+             data={data}
+            >
+            </BookingModal>
             }
         </div>
     );
