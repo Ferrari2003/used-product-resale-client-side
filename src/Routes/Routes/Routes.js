@@ -1,6 +1,10 @@
+
 import Main from "../../LayOut/Main";
+import CategoryCollection from "../../Pages/CategoryCollection/CategoryCollection";
+
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import Blog from "../../Pages/Home/Blog/Blog";
+
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import About from "../../Pages/Shared/About/About";
@@ -19,6 +23,11 @@ export const router = createBrowserRouter([
                     path:'/',
                     element:<Home></Home>,
                     loader:()=> fetch('http://localhost:8000/')
+                },
+                {
+                    path:'/category/:id',
+                    element:<CategoryCollection></CategoryCollection>,
+                    loader:({params}) => fetch(`http://localhost:8000/category/${params.id}`)
                 },
                 {
                     path:'/login',

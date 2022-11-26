@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaArrowRight } from "react-icons/fa";
 
 const Card = ({ category }) => {
-
     const { _id, title, images } = category
 
     return (
@@ -13,8 +13,8 @@ const Card = ({ category }) => {
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{title}</h2>
                 <div className="card-actions">
-                   <Link to={`/category${_id}`}>
-                   <button className="btn btn-primary w-full font-bold text-slate-300">Show Details</button>
+                   <Link to={`/category/${_id}`}>
+                   <button className="btn btn-primary w-full font-bold text-slate-300"><FaArrowRight className='text-2xl mr-4'></FaArrowRight> Show Details</button>
                    </Link>
                 </div>
             </div>

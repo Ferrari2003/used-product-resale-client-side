@@ -6,7 +6,7 @@ import { FaBuffer } from "react-icons/fa";
 const HomeCard = () => {
 
     const data = useLoaderData();
-    console.log(data)
+    
 
     return (
         <div>

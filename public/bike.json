@@ -7,14 +7,36 @@
     "products":[
       {
         "service_id":"01",
-        "name":"Yamaha",
+        "name":"Yamaha f-Z3",
         "photo":"https://i.ibb.co/YZTkPvF/fz.webp",
         "location":"Manikganj",
-        "originalPrice":"2,50000",
-        "resalePrice":"2,30000",
+        "originalPrice":"$2,50000",
+        "resalePrice":"$2,30000",
         "used":"1 months",
-        "time":"11 November",
+        "time":"11:26pm",
         "sellerName":"Saiful"
+      },
+      {
+        "service_id":"02",
+        "name":"Yamaha R15-v3",
+        "photo":"https://i.ibb.co/qnws0df/yamaha-r15-v3-in-darknight-color.jpg",
+        "location":"Dhaka",
+        "originalPrice":"$4,50000",
+        "resalePrice":"$3,30000",
+        "used":"2 months",
+        "time":"01:30pm",
+        "sellerName":"Babu" 
+      },
+      {
+        "service_id":"03am",
+        "name":"Yamaha R15-M",
+        "photo":"https://i.ibb.co/LntS59R/Yamaha-R15-M.jpg",
+        "location":"khulna",
+        "originalPrice":"$5,50000",
+        "resalePrice":"$4,30000",
+        "used":"3 months",
+        "time":"03:45pm",
+        "sellerName":"Ferrari" 
       }
     ]
   },
@@ -25,35 +47,78 @@
     "images": "https://i.ibb.co/h2jYtLh/images-1.png",
     "products":[
       {
-        "service_id": "02",
-        "name":"Kawasaki",
+        "service_id": "01",
+        "name":"Islam",
         "photo":"https://i.ibb.co/YZTkPvF/fz.webp",
-        "location":"Manikganj",
-        "originalPrice":"6,50000",
-        "resalePrice":"5,30000",
+        "location":"Mawa",
+        "originalPrice":"$6,50000",
+        "resalePrice":"$5,30000",
         "used":"3 months",
-        "time":"11 December",
+        "time":"12:11pm",
         "sellerName":"Rifat"
+      },
+      {
+        "service_id": "02",
+        "name":"Kawasaki ninja-H2",
+        "photo":"https://i.ibb.co/4JmjxSW/kawasaki-ninja-h2r-standard20200803234022.webp",
+        "location":"Bandrban",
+        "originalPrice":"$8,50000",
+        "resalePrice":"$6,30000",
+        "used":"6 months",
+        "time":"12:31pm",
+        "sellerName":"Arafat"
+      },
+      {
+        "service_id": "03",
+        "name":"Kawasaki axsal",
+        "photo":"https://i.ibb.co/4JmjxSW/kawasaki-ninja-h2r-standard20200803234022.webp",
+        "location":"Joshor",
+        "originalPrice":"$7,50000",
+        "resalePrice":"$6,50000",
+        "used":"4 months",
+        "time":"10:31pm",
+        "sellerName":"Shanto"
       }
     ]
   
   },
   {
    
-   
     "title": "Suzuki",
     "images": "https://i.ibb.co/37mPC83/2560px-Suzuki-logo-2-svg.png",
     "products":[
       {
-        "service_id": "03",
+        "service_id": "01",
         "name":"Suzuki",
         "photo":"https://i.ibb.co/19JrSr7/overview-image-3-4.jpg",
-        "location":"Manikganj",
-        "originalPrice":"1,75000",
-        "resalePrice":"1,30000",
+        "location":"Gopalganj",
+        "originalPrice":"$1,75000",
+        "resalePrice":"$1,30000",
         "used":"4 months",
-        "time":"11 December",
+        "time":"9:40pm",
         "sellerName":"Sojib"
+      },
+      {
+        "service_id": "02",
+        "name":"Suzuki SF",
+        "photo":"https://i.ibb.co/Pw3v4Nc/overview-image-23-4.jpg",
+        "location":"Keraniganj",
+        "originalPrice":"$2,95000",
+        "resalePrice":"$2,30000",
+        "used":"1 months",
+        "time":"10:30pm",
+        "sellerName":"Akash"
+      },
+      {
+        "service_id": "03",
+        "name":"Suzuki gxr",
+        "photo":"https://i.ibb.co/bbrDF9w/suzuki-gsx-r150-img-a2.jpg",
+        "location":"Saver",
+        "originalPrice":"$3,80000",
+        "resalePrice":"$3,30000",
+        "used":"2 months",
+        "time":"1:30pm",
+        "sellerName":"Akash"
       }
     ]
   }
