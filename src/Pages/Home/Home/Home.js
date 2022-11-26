@@ -3,6 +3,8 @@ import Banner from '../Banner/Banner';
 import BannerPage from '../BannerPage/BannerPage';
 import Carousel from '../Carousel/Carousel';
 import ContactUs from '../ContactUs/ContactUs';
+import GoogleMap from '../GoogleMap/GoogleMap';
+
 import HomeCard from '../HomeCard/HomeCard';
 
 
@@ -16,6 +18,7 @@ const Home = () => {
             <BannerPage></BannerPage>
             <Carousel></Carousel>
             <ContactUs></ContactUs>
+            <GoogleMap></GoogleMap>
         </div>
     );
 };
