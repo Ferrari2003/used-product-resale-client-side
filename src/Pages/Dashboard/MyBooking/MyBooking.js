@@ -45,7 +45,7 @@ const MyBooking = () => {
                                     <td className='text-2xl'>{booking.location}</td>
                                     <td className='text-2xl'>{booking.sellerName}</td>
                                 </tr>)
-                        }git
+                        }
                     </tbody>
                 </table>
             </div>
