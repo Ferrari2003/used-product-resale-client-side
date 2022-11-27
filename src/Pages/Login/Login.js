@@ -1,20 +1,30 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
+import useToken from '../../hooks/useHooks';
 
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const {signUp,googleSign  } = useContext(AuthContext);
     const [loginError, setLoginError] = useState('');
+
+    const [loginUserEmail, setLoginUserEmail] =useState('') ;
+    const [token] = useToken(loginUserEmail);
+
     const location = useLocation();
     const navigate = useNavigate()
 
     const from = location.state?.from?.pathname || '/';
 
+    useEffect(()=> {
+        if(token){
+        navigate(from, {replace:true})
+    }
+    },[token])
 
     const handleLogin = data => {
         console.log(data);
@@ -24,7 +34,8 @@ const Login = () => {
             const user = result.user;
             toast('Login success')
             console.log(user)
-            navigate(from, {replace:true})
+            setLoginUserEmail(data.email)
+            
         })
         .catch(error =>{
             console.log(error.message);

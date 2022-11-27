@@ -2,6 +2,7 @@
 import DashboardLayout from "../../LayOut/DashboardLayout";
 import Main from "../../LayOut/Main";
 import CategoryCollection from "../../Pages/CategoryCollection/CategoryCollection";
+import AllSeller from "../../Pages/Dashboard/AllSeller/AllSeller";
 
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import MyBooking from "../../Pages/Dashboard/MyBooking/MyBooking";
@@ -58,7 +59,11 @@ export const router = createBrowserRouter([
                 {
                   path:'/dashboard',
                   element:<MyBooking></MyBooking>
-                }
+                },
+                {
+                  path:'/dashboard/allseller',
+                  element:<AllSeller></AllSeller>
+                },
             ]
           }
     ])

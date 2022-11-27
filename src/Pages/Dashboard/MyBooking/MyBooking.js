@@ -12,7 +12,11 @@ const MyBooking = () => {
     const { data: bookings = [] } = useQuery({
         queryKey: ['bookings', user?.email],
         queryFn: async () => {
-            const res = await fetch(url);
+            const res = await fetch(url,{
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
             const data = await res.json()
             return data;
         }
@@ -20,7 +24,7 @@ const MyBooking = () => {
 
     return (
         <div className='bg-teal-100'>
-            <h3 className='text-3xl ml-4 mb-6 p-6 font-bold'>My Booking</h3>
+            <h3 className='text-3xl ml-4 mb-6 p-6 font-bold'>My Orders</h3>
             <div className="overflow-x-auto ">
                 <table className="table w-full">
 
@@ -36,7 +40,7 @@ const MyBooking = () => {
                     </thead>
                     <tbody>
                         {
-                            bookings.map((booking,i) =>
+                            bookings?.map((booking,i) =>
                                 <tr key={booking._id}>
                                     <th className='text-2xl'>{i+1}</th>
                                     <td className='text-2xl'>{booking.email}</td>

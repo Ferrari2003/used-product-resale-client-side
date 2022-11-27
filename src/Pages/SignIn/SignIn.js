@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
+import userToken from '../../hooks/useHooks';
 
 
 
@@ -14,7 +15,14 @@ const SignIn = () => {
 
     const { createUser, googleSign, updateUser } = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState('');
+
+    const [createUserEmail, setCreateUSerEmail] = useState('')
+    const [token] = userToken(createUserEmail)
     const navigate = useNavigate();
+
+   if(token){
+    navigate('/');
+   }
 
     const handleSignUp = (data) => {
         setSignUpError('');
@@ -63,27 +71,19 @@ const SignIn = () => {
         })
         .then(res => res.json())
         .then(data => {
-            userToken(email);
-           
+            setCreateUSerEmail(email)
+            navigate('/');
         })
 
-         const userToken = email => {
-            fetch(`http://localhost:8000/jwt?email=${email}`)
-            .then(res => res.json())
-            .then(data => {
-                if(data.accessToken){
-                    localStorage.setItem('accessToken', data.accessToken);
-                    navigate('/');
-                }
-            })
-         }
+        
     }
 
     const handleGoogleLogin = () => {
         googleSign()
             .then(result => {
                 const user = result.user
-                console.log(user)
+                console.log(user);
+                navigate('/');
             })
             .catch(error => {
                 console.log(error)
