@@ -1,8 +1,11 @@
 
+import DashboardLayout from "../../LayOut/DashboardLayout";
 import Main from "../../LayOut/Main";
 import CategoryCollection from "../../Pages/CategoryCollection/CategoryCollection";
 
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
+import MyBooking from "../../Pages/Dashboard/MyBooking/MyBooking";
+
 import Blog from "../../Pages/Home/Blog/Blog";
 
 import Home from "../../Pages/Home/Home/Home";
@@ -50,6 +53,12 @@ export const router = createBrowserRouter([
           },
           {
             path:'/dashboard',
-            element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>
+            element:<PrivateRoutes><DashboardLayout></DashboardLayout></PrivateRoutes>,
+            children:[
+                {
+                  path:'/dashboard',
+                  element:<MyBooking></MyBooking>
+                }
+            ]
           }
     ])
