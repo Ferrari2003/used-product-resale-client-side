@@ -7,7 +7,7 @@ const CategoryCollection = () => {
  
     const CardData = useLoaderData();
     const {products} = CardData;
-    const [data, setData] = useState(null)
+    const [data, setData] = useState(null);
     
 
     return (
@@ -23,7 +23,7 @@ const CategoryCollection = () => {
             data && 
             <BookingModal
              data={data}
-             
+             setData={setData}
             >
             </BookingModal>
             }
