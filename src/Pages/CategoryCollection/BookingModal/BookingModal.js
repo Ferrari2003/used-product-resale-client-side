@@ -1,10 +1,28 @@
+
 import React, { useContext } from 'react';
-import { FaCheckDouble } from "react-icons/fa";
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
+
 const BookingModal = ({ data }) => {
-    const {user} = useContext(AuthContext)
-    const { name,resalePrice, location,sellerName } = data
+ const {user} =useContext(AuthContext)
+    
+
+
+    const { name,sellerName,resalePrice,time,location, } = data;
+
+    const handleBooking = (event) => {
+        event.preventDefault();
+               
+        const form = event.target
+        const sellerName =form.sellerName.value;
+        const email = form.email.value;
+        const resalePrice =form.resalePrice.value;
+        const time = form.time.value;
+        const location = form.location.value;
+        console.log(sellerName, email, resalePrice, time,location)
+
+    }
+
     return (
         <>
             <input type="checkbox" id="booking-modal" className="modal-toggle" />
@@ -12,14 +30,13 @@ const BookingModal = ({ data }) => {
                 <div className="modal-box relative">
                     <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="text-lg font-bold">{name}</h3>
-                    <form className='grid grid-cols-1'>
-                        <input type="text" readOnly value={user.displayName} className="input  input-bordered  w-full m-4" />
-                        <input type="text" readOnly value={user.email} className="input  input-bordered  w-full m-4" />
-                        <input type="text" readOnly value={name} className="input  input-bordered  w-full m-4" />
-                        <input type="text" readOnly value={resalePrice} className="input  input-bordered  w-full m-4" />
-                        <input type="text" readOnly value={sellerName} className="input  input-bordered  w-full m-4" />
-                        <input type="text"  readOnly value={location} className="input  input-bordered  w-full m-4" />
-                        <button className='btn btn-accent text-white w-full max-xs text-2xl'><FaCheckDouble className='text-3xl mr-4'></FaCheckDouble>Book Confirm</button>
+                    <form onSubmit={handleBooking} className='grid grid-cols-1 gap-6'>                      
+                        <input name="sellerName" defaultValue={sellerName} placeholder="Seller Name" className="input  input-bordered  w-full" />
+                        <input name="email" defaultValue={user.email} placeholder="Email" className="input  input-bordered  w-full" />
+                        <input name="resalePrice" defaultValue={resalePrice} placeholder="Resale Price" className="input  input-bordered  w-full" />
+                        <input name="time" defaultValue={time} placeholder="Time" className="input  input-bordered  w-full" />
+                        <input name="location" defaultValue={location} placeholder="Location" className="input  input-bordered  w-full" />
+                        <input className='btn btn-accent w-full ' type="submit" value="Submit" />
                     </form>
                 </div>
             </div>

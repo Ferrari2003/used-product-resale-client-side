@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 const CategoryCollectionCard = ({ items, setData }) => {
     const { photo, name, location, originalPrice, resalePrice, used, time, sellerName } = items
     return (
-        <div className="card w-96 bg-base-100 shadow-xl m-16 ">
+        <div className="card w-96 shadow-xl m-16 bg-gray-300 ">
             <figure><img src={photo} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-3xl"><strong>{name}</strong></h2>
@@ -18,7 +18,7 @@ const CategoryCollectionCard = ({ items, setData }) => {
                 <div className="card-actions justify-end">
                     <label htmlFor="booking-modal"
                         onClick={() => setData(items)}
-                        className="btn btn-primary  bg-gradient-to-r from-purple-500 font-bold to-pink-500">
+                        className="btn btn-primary   bg-gradient-to-r from-violet-500 to-fuchsia-500">
 
                         <FaArrowRight
                             className='mr-4 text-2xl font-semibold'>
