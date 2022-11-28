@@ -2,6 +2,7 @@
 import DashboardLayout from "../../LayOut/DashboardLayout";
 import Main from "../../LayOut/Main";
 import CategoryCollection from "../../Pages/CategoryCollection/CategoryCollection";
+import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import AllSeller from "../../Pages/Dashboard/AllSeller/AllSeller";
 
 
@@ -65,6 +66,11 @@ export const router = createBrowserRouter([
       {
         path: '/dashboard/alluser',
         element: <AdminRoute><AllSeller></AllSeller></AdminRoute>
+      },
+      {
+        path: '/dashboard/addproduct',
+        element: <AdminRoute><AddProduct></AddProduct></AdminRoute>
+      
       },
     ]
   }
