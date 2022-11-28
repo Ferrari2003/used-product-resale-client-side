@@ -18,7 +18,7 @@ const AllSeller = () => {
         fetch(`http://localhost:8000/users/admin/${id}`,{
         method: 'PUT',
         headers: {
-            authorization: `${localStorage.getItem('accessToken')}`
+            authorization: `saiful ${localStorage.getItem('accessToken')}`
         }
         })
         .then(res => res.json())
@@ -42,7 +42,7 @@ const AllSeller = () => {
                             <th>Name</th>
                             <th>Email Address</th>
                             <th>Admin</th>
-                            <th>Delete</th>
+                         
                         </tr>
                     </thead>
                     <tbody>
@@ -54,7 +54,7 @@ const AllSeller = () => {
                                     <td>{seller.name}</td>
                                     <td>{seller.email}</td>
                                     <td>{seller?.role !== 'admin' && <button onClick={()=>handleMakeAdmin(seller._id)} className="btn btn-primary btn-sm ">Make Admin</button>}</td>
-                                    <td><button className="btn btn-info btn-sm">Delete</button></td>
+                                    
                                     
                                 </tr>)
                         }

@@ -4,15 +4,18 @@ import Main from "../../LayOut/Main";
 import CategoryCollection from "../../Pages/CategoryCollection/CategoryCollection";
 import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import AllSeller from "../../Pages/Dashboard/AllSeller/AllSeller";
+import ManageOrders from "../../Pages/Dashboard/ManageOrders/ManageOrders";
 
 
 import MyBooking from "../../Pages/Dashboard/MyBooking/MyBooking";
+
 
 import Blog from "../../Pages/Home/Blog/Blog";
 
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import About from "../../Pages/Shared/About/About";
+import FoundNot from "../../Pages/Shared/FoundNot/FoundNot";
 import SignIn from "../../Pages/SignIn/SignIn";
 import AdminRoute from "./AdminRoute/AdminRoute";
 
@@ -52,6 +55,10 @@ export const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blog></Blog>
+      },
+      {
+        path:'*',
+        element:<FoundNot></FoundNot>
       }
     ]
   },
@@ -70,8 +77,12 @@ export const router = createBrowserRouter([
       {
         path: '/dashboard/addproduct',
         element: <AdminRoute><AddProduct></AddProduct></AdminRoute>
-      
       },
+      {
+        path:'/dashboard/manageoders',
+        element: <AdminRoute><ManageOrders></ManageOrders></AdminRoute>
+      }
+     
     ]
   }
 ])
