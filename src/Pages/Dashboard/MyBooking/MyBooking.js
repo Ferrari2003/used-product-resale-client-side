@@ -40,7 +40,7 @@ const MyBooking = () => {
                     </thead>
                     <tbody>
                         {
-                            bookings?.map((booking,i) =>
+                            bookings.map((booking,i) =>
                                 <tr key={booking._id}>
                                     <th className='text-2xl'>{i+1}</th>
                                     <td className='text-2xl'>{booking.email}</td>
