@@ -14,7 +14,7 @@ const CategoryCollectionCard = ({ items, setData }) => {
                 <p className='text-2xl'>Used:<strong>{used}</strong></p>
                 <p className='text-2xl'>Time:<strong>{time}</strong></p>
                 <p className='text-2xl'>Seller Name:<strong>{sellerName}</strong></p>
-
+         
                 <div className="card-actions justify-end">
                     <label htmlFor="booking-modal"
                         onClick={() => setData(items)}
